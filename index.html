@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isochrone Visualizer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1>Isochrone Visualizer</h1>
+        </header>
+        <main>
+            <div id="controls">
+                <div class="control-group">
+                    <label for="location">Location Name:</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Eiffel Tower (or click map & generate)">
+                </div>
+
+                <div class="control-group">
+                    <fieldset>
+                        <legend>Isochrone Type:</legend>
+                        <div>
+                            <input type="radio" id="type-distance" name="isochrone-type" value="distance" checked>
+                            <label for="type-distance">By Distance</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-time" name="isochrone-type" value="time">
+                            <label for="type-time">By Time</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="control-group" id="distance-controls">
+                    <label for="distance-value">Total Distance (km):</label>
+                    <input type="number" id="distance-value" name="distance-value" value="5" min="1">
+                </div>
+
+                <div class="control-group" id="time-controls" style="display: none;">
+                    <label for="time-value">Total Time (minutes):</label>
+                    <input type="number" id="time-value" name="time-value" value="15" min="1">
+                </div>
+
+                <div class="control-group">
+                    <label for="num-bands">Number of Isochrone Bands:</label>
+                    <input type="number" id="num-bands" name="num-bands" value="5" min="1" max="10">
+                </div>
+
+                <button id="generate-btn" aria-label="Generate Isochrone">Generate Isochrone</button>
+                <div id="loading-message" class="message" style="display: none;">Generating...</div>
+                <div id="info-message" class="message" style="display: none;"></div>
+                
+                <div id="legend-container" class="legend-container">
+                    <h3>Legend</h3>
+                    <div id="legend-items"></div>
+                </div>
+            </div>
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script type="module" src="index.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

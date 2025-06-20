@@ -1,0 +1,5 @@
+
+{
+  "name": "Isochrone Visualizer",
+  "description": "An application to visualize isochrones (reachability areas) on a map based on distance or time. This version simulates isochrone generation on the frontend."
+}
